@@ -229,7 +229,7 @@ export default function TranslatorApp() {
         className={`w-full  ${headerBg} py-4 px-6 flex items-center justify-between fixed top-0 left-0 right-0 z-50`}
       >
         <h1 className="sigmar-regular text-2xl font-bold tracking-wide">
-          Powerful AI Translator{" "}
+          Powerful AI Translator
         </h1>
         {/* Mode Toggle: Icon only, at top-right */}
         <button
@@ -243,12 +243,14 @@ export default function TranslatorApp() {
 
       {/* container for main content  */}
       <div
-        className={`w-md min-w-100 max-w-lg md:max-w-xl lg:max-w-2xl ${appBg} rounded-lg fmt-10 shadow-xl overflow-hidden mt-[64px] m-auto`}
+        className={`w-md min-w-100 max-w-lg md:max-w-xl lg:max-w-2xl ${appBg} rounded-lg fmt-10 shadow-xl overflow-hidden pt-16 m-auto`}
       >
         {/* Main Content */}
         <div className="flex flex-col h-[calc(100vh-64px)] justify-center2">
           {error && (
-            <p className="fixed bg-black text-red-500 text-sm">{error}</p>
+            <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-sm py-2 px-4 rounded-lg shadow-md">
+              {error}
+            </div>
           )}
           {messages.length === 0 ? (
             // No messages: center the input box (with visible border & spacing)
@@ -345,7 +347,7 @@ export default function TranslatorApp() {
               >
                 <div className="max-w-lg mx-auto flex items-center">
                   <textarea
-                    className={`flex-1 p-1 border rounded resize-none focus:outline-none focus:ring-2 ${textBg} transition-colors duration-300`}
+                    className={`flex-1 p-3 border rounded resize-none leading-6 focus:outline-none focus:ring-2 ${textBg} transition-colors duration-300`}
                     placeholder="Type your message here..."
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
